@@ -126,12 +126,11 @@ riscv-binutils-gdb：https://github.com/pz9115/riscv-binutils-gdb/tree/riscv-bin
 1. 普通用户下，sudo安装gnu测试工作所依赖的软件包。
 
    ```
-xj@6d592fc325bf:/$ sudo apt update
-
-xj@6d592fc325bf:/$ sudo apt upgrade
-
-xj@6d592fc325bf:/$ sudo apt install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev cmake ninja-build pkg-config libglib2.0-dev libpixman-1-dev python git libfdt-dev libncurses5-dev libncursesw5-dev device-tree-compiler
-
+   xj@6d592fc325bf:/$ sudo apt update
+   
+   xj@6d592fc325bf:/$ sudo apt upgrade
+   
+   xj@6d592fc325bf:/$ sudo apt install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev cmake ninja-build pkg-config libglib2.0-dev libpixman-1-dev python git libfdt-dev libncurses5-dev libncursesw5-dev device-tree-compiler
    ```
 
 
@@ -141,7 +140,7 @@ xj@6d592fc325bf:/$ sudo apt install autoconf automake autotools-dev curl python3
    ```
    # 切换到home目录下
    xj@6d592fc325bf:/$ cd
-   
+
    # 在home目录下创建新目录（如果是在/目录下创建新目录，会有权限问题）
    xj@e2ba8bd04169:~$ mkdir RISCV
    xj@e2ba8bd04169:~$  cd RISCV
@@ -154,7 +153,7 @@ xj@6d592fc325bf:/$ sudo apt install autoconf automake autotools-dev curl python3
 
 根据规划的目录，配置环境变量：
 
-```
+   ```
 # 配置环境变量
 xj@e2ba8bd04169:~$ vim ~/.bashrc
 ----在文件开头加入以下两行-------------
@@ -170,7 +169,7 @@ xj@e2ba8bd04169:~$ echo $PATH
 /home/xijing/RISCV/b_rv64_newlib/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 xj@e2ba8bd04169:~$ echo $RISCV
 /home/xijing/RISCV
-```
+   ```
 
 
 
@@ -180,15 +179,15 @@ xj@e2ba8bd04169:~$ echo $RISCV
 
 1. 下载riscv-gnu-toolchain总代码包，并查询记录其版本信息
 
-   ```
+```
    # git clone --recursive 用于循环克隆git子项目 
    xj@e2ba8bd04169:~/RISCV$  git clone --recursive https://github.com/riscv/riscv-gnu-toolchain.git
-   
+
    # 查看并输出commmitid版本信息
    xj@e2ba8bd04169:~/RISCV$ cd riscv-gnu-toolchain
    xj@e2ba8bd04169:~/RISCV/riscv-gnu-toolchain$ git rev-parse HEAD 
-   
-   ```
+
+```
 
    
 
@@ -207,10 +206,10 @@ xj@e2ba8bd04169:~$ echo $RISCV
 
    ```
    xj@e2ba8bd04169:~/RISCV/b-ext$ cd riscv-gcc
-   
+
    # 添加一个远程仓库pz9115
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-gcc$ git remote add pz9115 https://github.com/pz9115/riscv-gcc.git
-   
+
    # 将远程仓库pz9115的最新内容拉到本地
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-gcc$ git fetch pz9115
    remote: Enumerating objects: 1011, done.
@@ -234,7 +233,7 @@ xj@e2ba8bd04169:~$ echo $RISCV
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-gcc$ git checkout pz9115/riscv-gcc-10.2.0-rvb
    Previous HEAD position was 03cb20e5433 Update 2 C++ coroutine testcases from upstream.
    HEAD is now at fcd1b5d046c Add testcases with for zbb zbe zbp
-   
+
    # 查询riscv-gcc代码版本
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-gcc$ git rev-parse HEAD                                                          
    fcd1b5d046c6fb087a2dff83ca4cda3d28f10ed1    
@@ -246,10 +245,10 @@ xj@e2ba8bd04169:~$ echo $RISCV
 
    ```
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-gcc$ cd ../riscv-binutils/
-   
+
    # 添加一个远程仓库pz9115
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-binutils$ git remote add pz9115 https://github.com/pz9115/riscv-binutils-gdb.git
-   
+
    # 将远程仓库pz9115的最新内容拉到本地
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-binutils$  git fetch pz9115
    remote: Enumerating objects: 408, done.
@@ -270,7 +269,7 @@ xj@e2ba8bd04169:~$ echo $RISCV
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-binutils$ git checkout pz9115/riscv-binutils-experiment
    Previous HEAD position was f35674005e This is 2.36.1 release
    HEAD is now at d52e3ccf96 Fix the indents problems and update INSN_ALIAS FLAG
-   
+
    # 查询并获取riscv-binutils版本信息
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-binutils$ git rev-parse HEAD                                                     
    d52e3ccf969016bd9db01a7e58e7902456d2c9e5      
@@ -318,7 +317,7 @@ xj@e2ba8bd04169:~$ echo $RISCV
    config.status: creating Makefile
    config.status: creating scripts/wrapper/awk/awk
    config.status: creating scripts/wrapper/sed/sed
-   
+
    # 构建并将构建过程记录到log文档中
    xj@e2ba8bd04169:~/RISCV/b-ext/build_rv64_newlib$ make 2>&1|tee b_rv64_newlib-build-20210701.log
    ```
@@ -333,7 +332,7 @@ xj@e2ba8bd04169:~$ echo $RISCV
 
    ```
    xj@e2ba8bd04169:~/RISCV/b-ext/build_rv64_newlib$ make report-gcc-newlib 2>&1|tee b_rv64_newlib-reportgccnewlib-20210701.log
-   
+
    ```
 
    
@@ -364,16 +363,16 @@ xj@e2ba8bd04169:~$ echo $RISCV
 
    ```
    		=== ld Summary ===
-   
+
    # of expected passes		539
    # of unexpected failures	14
    # of expected failures		11
    # of unsupported tests		203
-   
+
    		=== ld: Unexpected fails for rv64gc_zba_zbb_zbc_zbe_zbf_zbm_zbp_zbr_zbs_zbt lp64 medlow ===
    FAIL: Run pr26391-5
    FAIL: Run pr26391-6
-   
+
                   ========= Summary of binutils testsuite =========
                                | # of unexpected case
                                |     binutils |           ld |          gas |
@@ -397,14 +396,14 @@ xj@e2ba8bd04169:~$ echo $RISCV
 
 暂定义测试结果保存到 https://github.com/xijing21/tarsier-testresult-gnu.git 
 
-```
+   ```
 xj@e2ba8bd04169:~/RISCV$ git clone https://github.com/xijing21/tarsier-testresult-gnu.git
 xj@e2ba8bd04169:~/RISCV$ cd tarsier-testresult-gnu
 xj@e2ba8bd04169:~/RISCV/tarsier-testresult-gnu$ cp ~/RISCV/b-ext/build_rv64_newlib/*-20210701.log  .
 xj@e2ba8bd04169:~/RISCV/tarsier-testresult-gnu$ git add .
 xj@e2ba8bd04169:~/RISCV/tarsier-testresult-gnu$ git commit -m "b_rv64_newlib-20210701"
 xj@e2ba8bd04169:~/RISCV/tarsier-testresult-gnu$ git push
-```
+   ```
 
 
 
@@ -437,3 +436,4 @@ todo：计划将任务单以y站issue方式进行管理，因此测试的结果�
 当对比分析发现了新的bug时，将bug提交到gnu的bug管理系统中去。
 
 怎么判断bug？todo
+
