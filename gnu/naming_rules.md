@@ -1,6 +1,8 @@
-# 目录命令规则
+# 命令规则
 
-测试过程中，对构建结果目录的命令规则约束。
+为了方便测试管理，对测试过程中涉及的目录、文件名进行命令规则定义和约束。方便测试过程管理和测试结果来管理和后续测试结果分析时的文件检索。
+
+
 
 ## 分析
 
@@ -30,27 +32,7 @@
 
 ## 1. 目录树结构参考
 
-$RISCV/riscv-gnu-toolchain
-
-
-
-$RISCV/b-ext
-
-$RISCV/b-ext/riscv-gcc
-
-$RISCV/b-ext/riscv-binutils
-
-$RISCV/b-ext/build_rv64_newlib
-
-$RISCV/b_rv64_newlib
-
-
-
-$RISCV/k-ext
-
-$RISCV/k-ext/build_rv32_linux
-
-$RISCV/k_rv32_linux
+![](images/directory.png)
 
 
 
@@ -80,3 +62,10 @@ $RISCV/k_rv32_linux
 
 linux函数库测试，回归测试命令是什么？
 
+
+
+## 4. 测试文档命令规则
+
+项目简称-----测试类型-----扩展指令集-----目标操作系统架构-----函数库
+
+gnu-regression-b_rv64_newlib：gnu回归测试；测试内容b_rv64_newlib；
