@@ -8,11 +8,6 @@
 
 **简介：**
 
-1. [测试目的与测试分类](https://github.com/xijing21/tarsier-test-job/blob/main/gnu/测试目的与测试分类.md)
-2. [riscv-gnu-toolchain](https://github.com/xijing21/tarsier-test-job/blob/main/gnu/riscv-gnu-toolchain.svg)
-3. [RISC-V GNU TOOLCHAIN扩展参数手册.docx](https://github.com/xijing21/tarsier-test-job/blob/main/gnu/RISC-V GNU TOOLCHAIN扩展参数手册.docx)
-4. 官网：https://github.com/riscv/riscv-gnu-toolchain
-
 
 
 **执行测试任务：**
