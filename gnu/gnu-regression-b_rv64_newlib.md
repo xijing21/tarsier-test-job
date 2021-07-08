@@ -106,7 +106,7 @@ gnu回归测试，通过前后两次(代码提交前和代码提交后)回归测
    ```
    # 切换到home目录下
    dockeruser@dockerhost:/$ cd
-
+   
    # 在home目录下创建新目录（如果是在/目录下创建新目录，会有权限问题）
    dockeruser@dockerhost:~$ mkdir RISCV
    dockeruser@dockerhost:~$  cd RISCV
@@ -223,10 +223,10 @@ dockeruser@dockerhost:~$ echo $RISCV 2>&1|tee -a ~/RISCV/b_rv64_newlib-task-2021
 
    ```
    dockeruser@dockerhost:~/RISCV/b-ext/riscv-gcc$ cd ../riscv-binutils/
-
+   
    # 添加一个远程仓库pz9115
    dockeruser@dockerhost:~/RISCV/b-ext/riscv-binutils$ git remote add pz9115 https://github.com/pz9115/riscv-binutils-gdb.git
-
+   
    # 将远程仓库pz9115的最新内容拉到本地
    dockeruser@dockerhost:~/RISCV/b-ext/riscv-binutils$  git fetch pz9115
    remote: Enumerating objects: 408, done.
@@ -247,12 +247,12 @@ dockeruser@dockerhost:~$ echo $RISCV 2>&1|tee -a ~/RISCV/b_rv64_newlib-task-2021
    dockeruser@dockerhost:~/RISCV/b-ext/riscv-binutils$ git checkout pz9115/riscv-binutils-experiment
    Previous HEAD position was f35674005e This is 2.36.1 release
    HEAD is now at d52e3ccf96 Fix the indents problems and update INSN_ALIAS FLAG
-
+   
    # 查询并获取riscv-binutils版本信息
    dockeruser@dockerhost:~/RISCV/b-ext/riscv-binutils$ git remote -v       2>&1|tee -a ~/RISCV/b_rv64_newlib-task-20210701.log
    dockeruser@dockerhost:~/RISCV/b-ext/riscv-binutils$ git branch  		  2>&1|tee -a ~/RISCV/b_rv64_newlib-task-20210701.log
    dockeruser@dockerhost:~/RISCV/b-ext/riscv-binutils$ git rev-parse HEAD  2>&1|tee -a ~/RISCV/b_rv64_newlib-task-20210701.log
-d52e3ccf969016bd9db01a7e58e7902456d2c9e5      
+   d52e3ccf969016bd9db01a7e58e7902456d2c9e5      
    ```
    
    
@@ -297,7 +297,7 @@ d52e3ccf969016bd9db01a7e58e7902456d2c9e5
    config.status: creating Makefile
    config.status: creating scripts/wrapper/awk/awk
    config.status: creating scripts/wrapper/sed/sed
-
+   
    # 构建并将构建过程记录到log文档中，修改日期为实际测试日期
    dockeruser@dockerhost:~/RISCV/b-ext/build_rv64_newlib$ make 2>&1|tee b_rv64_newlib-build-20210701.log
    ```
@@ -322,6 +322,8 @@ d52e3ccf969016bd9db01a7e58e7902456d2c9e5
 
    翻看输出的 b_rv64_newlib-reportgccnewlib-20210701.log文档，搜索Summary关键词，能够找到gcc Summary、 g++ Summary 、Summary of gcc testsuite 等信息。如下所示：
 
+   
+   
    ```
    		=== gcc Summary ===
    
@@ -365,6 +367,8 @@ d52e3ccf969016bd9db01a7e58e7902456d2c9e5
 
    翻看输出的 b_rv64_newlib-reportbinutilsnewlib-20210701.log文档，搜索Summary关键词，能够找到binutils Summary、 gas Summary 、ld Summary 、Summary of gcc testsuite 等信息。如下所示：
 
+   
+   
    ```
    		=== binutils Summary ===
    
@@ -392,8 +396,9 @@ d52e3ccf969016bd9db01a7e58e7902456d2c9e5
     rv64gc_zba_zbb_zbc_zbe_zbf_zbm_zbp_zbr_zbs_zbt/   lp64/ medlow |            0 |            2 |            0 |
    make: *** [Makefile:934: report-binutils-newlib] Error 1
    ```
-
    
+
+
 
 ### 2.5. 测试结果管理
 
@@ -424,6 +429,8 @@ dockeruser@dockerhost:~/RISCV/tarsier-testresult-gnu$ git push
 
 在 https://github.com/xijing21/tarsier-testresult-gnu/ 中，找到上一次的【b_rv64_newlib-20210620】测试结果，将两次的测试结果按照《gnu-regression-b_rv64_newlib-report.docx》要求填写测试结果，并对比两次的测试结果数据，填写测试结果。
 
+报告填写参考
+
 ![image-20210707180141030](images/image-20210707180141030.png)
 
 ![image-20210707180243394](images/image-20210707180243394.png)
@@ -431,5 +438,4 @@ dockeruser@dockerhost:~/RISCV/tarsier-testresult-gnu$ git push
 
 
 todo：计划将任务单以y站issue方式进行管理，因此测试的结果就贴到测试任务的issue中去。
-
 
