@@ -252,7 +252,7 @@ dockeruser@dockerhost:~$ echo $RISCV 2>&1|tee -a ~/RISCV/b_rv64_newlib-task-2021
    dockeruser@dockerhost:~/RISCV/b-ext/riscv-binutils$ git remote -v       2>&1|tee -a ~/RISCV/b_rv64_newlib-task-20210701.log
    dockeruser@dockerhost:~/RISCV/b-ext/riscv-binutils$ git branch  		  2>&1|tee -a ~/RISCV/b_rv64_newlib-task-20210701.log
    dockeruser@dockerhost:~/RISCV/b-ext/riscv-binutils$ git rev-parse HEAD  2>&1|tee -a ~/RISCV/b_rv64_newlib-task-20210701.log
-d52e3ccf969016bd9db01a7e58e7902456d2c9e5      
+   d52e3ccf969016bd9db01a7e58e7902456d2c9e5      
    ```
    
    
