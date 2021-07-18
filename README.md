@@ -119,7 +119,7 @@
 
               
 
-        **不同分支，除了代码源获取地址、configure参数不一样，环境要求、操作步骤一样，参考b分支代码执行。不同分支的源码地址、configure参数，为了更加简洁的展示，请在gnu测试用例文档gnu-testcases文档中查看并执行。**
+        **不同分支，除了代码源获取地址、configure参数不一样，环境要求、操作步骤一样，参考b分支代码执行。不同分支的源码地址、configure参数，为了更加简洁的展示，请在gnu测试用例文档[gnu-testcases](https://github.com/xijing21/tarsier-test-job/blob/main/gnu/gnu-testcases.xlsx)文档中查看并执行。**
 
         
 
