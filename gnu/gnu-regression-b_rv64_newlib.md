@@ -16,7 +16,7 @@ gnu回归测试，通过前后两次(代码提交前和代码提交后)回归测
 
 #### 1、docker+ubuntu20.04准备
 
-参考文档《搭建docker测试环境》，包含：
+参考文档[《搭建docker测试环境》](https://github.com/xijing21/tarsier-test-job/blob/main/gnu/test_environment-docker.md)，包含：
 
 1. ubuntu20.04的搭建
 2. 窗口会话分离的tmux会话
@@ -396,7 +396,6 @@ dockeruser@dockerhost:~$ echo $RISCV 2>&1|tee -a ~/RISCV/b_rv64_newlib-task-2021
     rv64gc_zba_zbb_zbc_zbe_zbf_zbm_zbp_zbr_zbs_zbt/   lp64/ medlow |            0 |            2 |            0 |
    make: *** [Makefile:934: report-binutils-newlib] Error 1
    ```
-   
 
 
 

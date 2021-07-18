@@ -140,7 +140,7 @@ riscv-binutils-gdb：https://github.com/pz9115/riscv-binutils-gdb/tree/riscv-bin
    ```
    # 切换到home目录下
    xj@6d592fc325bf:/$ cd
-
+   
    # 在home目录下创建新目录（如果是在/目录下创建新目录，会有权限问题）
    xj@e2ba8bd04169:~$ mkdir RISCV
    xj@e2ba8bd04169:~$  cd RISCV
@@ -245,10 +245,10 @@ xj@e2ba8bd04169:~$ echo $RISCV
 
    ```
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-gcc$ cd ../riscv-binutils/
-
+   
    # 添加一个远程仓库pz9115
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-binutils$ git remote add pz9115 https://github.com/pz9115/riscv-binutils-gdb.git
-
+   
    # 将远程仓库pz9115的最新内容拉到本地
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-binutils$  git fetch pz9115
    remote: Enumerating objects: 408, done.
@@ -269,7 +269,7 @@ xj@e2ba8bd04169:~$ echo $RISCV
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-binutils$ git checkout pz9115/riscv-binutils-experiment
    Previous HEAD position was f35674005e This is 2.36.1 release
    HEAD is now at d52e3ccf96 Fix the indents problems and update INSN_ALIAS FLAG
-
+   
    # 查询并获取riscv-binutils版本信息
    xj@e2ba8bd04169:~/RISCV/b-ext/riscv-binutils$ git rev-parse HEAD                                                     
    d52e3ccf969016bd9db01a7e58e7902456d2c9e5      
@@ -317,7 +317,7 @@ xj@e2ba8bd04169:~$ echo $RISCV
    config.status: creating Makefile
    config.status: creating scripts/wrapper/awk/awk
    config.status: creating scripts/wrapper/sed/sed
-
+   
    # 构建并将构建过程记录到log文档中
    xj@e2ba8bd04169:~/RISCV/b-ext/build_rv64_newlib$ make 2>&1|tee b_rv64_newlib-build-20210701.log
    ```
@@ -363,16 +363,16 @@ xj@e2ba8bd04169:~$ echo $RISCV
 
    ```
    		=== ld Summary ===
-
+   
    # of expected passes		539
    # of unexpected failures	14
    # of expected failures		11
    # of unsupported tests		203
-
+   
    		=== ld: Unexpected fails for rv64gc_zba_zbb_zbc_zbe_zbf_zbm_zbp_zbr_zbs_zbt lp64 medlow ===
    FAIL: Run pr26391-5
    FAIL: Run pr26391-6
-
+   
                   ========= Summary of binutils testsuite =========
                                | # of unexpected case
                                |     binutils |           ld |          gas |
